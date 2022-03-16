@@ -5,7 +5,7 @@ from PIL import Image
 from flask import render_template, url_for, flash, redirect, request, abort
 from flaskDemo import app, db, bcrypt, mysql
 from flaskDemo.forms import LoginForm, RegistrationForm
-from flaskDemo.models import User, Post
+from flaskDemo.models import User, Post, Project
 from flask_login import login_user, current_user, logout_user, login_required
 from datetime import datetime
 
@@ -49,6 +49,16 @@ def register():
         flash('Your account has been created! You are now able to log in', 'success')
         return redirect(url_for('login'))
     return render_template('register.html', title='Register', form=form)
+
+@app.route('/logout')
+def logout():
+    logout_user()
+    return redirect(url_for('home'))
+
+@app.route('/customer_home')
+def customer_home():
+    results = Project.query.all()
+    return render_template('customer_home.html', results = results)
 
 @app.route('/test/')
 def test():

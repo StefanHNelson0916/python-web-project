@@ -1,65 +1,43 @@
-{% extends "layout.html" %}
-{% block content %}
-<!-- Large Img + Card -->
-<div class="container-lg text-center">
-    <div class="card m-3 mt-5 mb-5" style="background-color: #7e8d85; color: #FFF;">
-        <div class="row g-0">
-            <!-- Card Image -->
-            <div class="col-lg-6 col-md-12 col-sm-12">
-                <img src="\static\home-main-img.jpg" class="img-fluid rounded h-100" alt="...">
-            </div>
-            <!-- Card Text -->
-            <div class="col-lg-6">
-                <div class="card-body m-4">
-                    <h5 class="card-title display-1 mb-3" style="font-family: 'Roboto Condensed', sans-serif;">
-                        Our Mission
-                    </h5>
-                    <p class="card-text display-6">
-                        To provide a personal platform for
-                        clients to find the resources
-                        they need to complete their projects. Part of this mission is establishing a meaningful way for
-                        Contractors
-                        and Customers to communicate. This results in increased project efficiency and quality for all
-                        parties. We are accomplishing this by providing a robust and fully supported user experience.
-                    </p>
-                </div>
-            </div>
-        </div>
+{% extends "layout.html" %} {% block content %}
+<div class="container-lg-12">
+  <div class="row">
+    <div class="col m-3" style="color:#453F21;">
+      <h1 class="display-1 fw-bolder">Projects For You</h1>
     </div>
+  </div>
 </div>
-<!-- Stats Cards -->
-<div class="container">
-    <div class="row">
-      <div class="statcard col md-4 text-center">
-        <div class="card">
-            <div class="card-header" style="background-color:#995d0b">
-            Number of Customer Projects Completed.
-            </div>
-            <div class="card-body" style="background-color:#f4b966">
-            500+
-            </div>
-          </div>
-      </div>
-      <div class="statcard col md-4 text-center">
-        <div class="card">
-            <div class="card-header" style="background-color:#995d0b">
-            Contractors Hired For Their Services.
-            </div>
-            <div class="card-body" style="background-color:#f4b966">
-            100+
-            </div>
-          </div>
-      </div>
-      <div class="statcard col md-4 text-center text-white">
-        <div class="card">
-            <div class="card-header" style="background-color:#995d0b">
-            Number of Services Provided by Contractors.
-            </div>
-            <div class="card-body" style="background-color:#f4b966">
-            30+
-            </div>
-          </div>
+<!-- Large Img + Card -->
+<div class="container-lg-12">
+  <div class="row">
+    <div class="col-lg-7 col-md-12 m-3">
+      <!-- Card Image -->
+      <img
+        src="/static/main-img-home.jpg"
+        class="img-fluid rounded h-100"
+        alt="..."
+      />
+    </div>
+    <!-- Card Text -->
+    <div class="col-lg-4 col-md-12 text-white rounded" style="background-color: #453F21">
+      <h5
+        class="card-title display-2 mb-3 text-center"
+        style="font-family: 'Roboto Condensed', sans-serif"
+      >
+        Our Mission
+      </h5>
+      <p class="card-text text-center" style="font-size: 2rem">
+        To provide a personal platform for clients to find the resources they
+        need to complete their projects. Part of this mission is establishing a
+        meaningful way for Contractors and Customers to communicate. This
+        results in increased project efficiency and quality for all parties. We
+        are accomplishing this by providing a robust and fully supported user
+        experience.
+      </p>
+      <div class="d-grid gap-2" style="margin-top: 40px; margin-bottom: 15px;">
+        <button class="btn" style="background-color: #FFF; font-size: 2em; color:#453F21;" type="button">New user?</button>
+        <button class="btn" style="background-color: #FFF; font-size: 2em; color:#453F21;" type="button">Returning user</button>
       </div>
     </div>
   </div>
+
 {% endblock content %}

@@ -1,15 +1,15 @@
 {% extends "layout.html" %} {% block content %}
 <div class="container-lg-12">
-  <div class="row">
-    <div class="col m-3" style="color:#453F21;">
+  <div class="row ">
+    <div class="col text-center m-3" style="color: #453f21">
       <h1 class="display-1 fw-bolder">Projects For You</h1>
     </div>
   </div>
 </div>
 <!-- Large Img + Card -->
-<div class="container-lg-12">
-  <div class="row">
-    <div class="col-lg-7 col-md-12 m-3">
+<div class="container-lg-12 ">
+  <div class="row justify-content-md-center">
+    <div class="col-lg-5 col-md-12 m-3">
       <!-- Card Image -->
       <img
         src="/static/main-img-home.jpg"
@@ -18,26 +18,47 @@
       />
     </div>
     <!-- Card Text -->
-    <div class="col-lg-4 col-md-12 text-white rounded" style="background-color: #453F21">
+    <div
+      class="col-lg-4 col-md-12 text-white rounded"
+      style="background-color: #453f21"
+    >
       <h5
         class="card-title display-2 mb-3 text-center"
         style="font-family: 'Roboto Condensed', sans-serif"
       >
         Our Mission
       </h5>
-      <p class="card-text text-center" style="font-size: 2rem">
+      <h5 class="card-text text-center">
         To provide a personal platform for clients to find the resources they
         need to complete their projects. Part of this mission is establishing a
         meaningful way for Contractors and Customers to communicate. This
         results in increased project efficiency and quality for all parties. We
         are accomplishing this by providing a robust and fully supported user
         experience.
-      </p>
-      <div class="d-grid gap-2" style="margin-top: 40px; margin-bottom: 15px;">
-        <button class="btn" style="background-color: #FFF; font-size: 2em; color:#453F21;" type="button">New user?</button>
-        <button class="btn" style="background-color: #FFF; font-size: 2em; color:#453F21;" type="button">Returning user</button>
+      </h5>
+      <div
+        class="d-grid gap-2 col-6 mx-auto"
+        style="margin-top: 40px; margin-bottom: 15px"
+      >
+        <button
+          class="btn"
+          style="background-color: #fff; font-size: 2em; color: #453f21"
+          type="button"
+        >
+          New
+        </button>
+        <h5 class="text-center">or</h5>
+        <button
+          class="btn"
+          style="background-color: #fff; font-size: 2em; color: #453f21"
+          type="button"
+        >
+          Returning
+        </button>
+        <h5 class="text-center">user?</h5>
       </div>
     </div>
   </div>
 
-{% endblock content %}
+  {% endblock content %}
+</div>

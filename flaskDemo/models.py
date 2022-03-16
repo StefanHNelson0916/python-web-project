@@ -33,3 +33,6 @@ class Post(db.Model):
      userType = db.Column(db.Integer, nullable=False)
      def __repr__(self):
          return f"Post('{self.title}', '{self.date_posted}')"
+
+class Project(db.Model):
+    __table__ = db.Model.metadata.tables['project']

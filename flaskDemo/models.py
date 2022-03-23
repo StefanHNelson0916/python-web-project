@@ -17,7 +17,6 @@ class User(db.Model, UserMixin):
     email = db.Column(db.String(120), unique=True, nullable=False)
     image_file = db.Column(db.String(20), nullable=False, default='default.jpg')
     password = db.Column(db.String(60), nullable=False)
-    user_type = db.Column(db.Integer, nullable=False)
     posts = db.relationship('Post', backref='author', lazy=True)
 
     def __repr__(self):
@@ -34,5 +33,29 @@ class Post(db.Model):
      def __repr__(self):
          return f"Post('{self.title}', '{self.date_posted}')"
 
+class Bid(db.Model):
+    __table__ = db.Model.metadata.tables['bid']
+
+class Contractor(db.Model):
+    __table__ = db.Model.metadata.tables['contractor']
+
+class Contractor_Skills(db.Model):
+    __table__ = db.Model.metadata.tables['contractor_skills']
+
+class Customer(db.Model):
+    __table__ = db.Model.metadata.tables['customer']
+
 class Project(db.Model):
     __table__ = db.Model.metadata.tables['project']
+
+class Skills(db.Model):
+    __table__ = db.Model.metadata.tables['skills']
+
+class Supplied(db.Model):
+    __table__ = db.Model.metadata.tables['supplied']
+
+class Supplier(db.Model):
+    __table__ = db.Model.metadata.tables['supplier']
+    
+
+  

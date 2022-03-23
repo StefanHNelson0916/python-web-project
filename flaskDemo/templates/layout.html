@@ -42,13 +42,24 @@
           <div class="collapse navbar-collapse justify-content" id="navbarNav">
             <ul class="navbar-nav mr-auto">
               <!-- Customer Links -->
-              <li class="nav-item">
-                <a class="nav-link" href="#">Customer Link</a>
-              </li>
-              <!-- Contractor Links -->
-              <li class="nav-item">
-                <a class="nav-link" href="#">Contractor Link</a>
-              </li>
+              {% if 'Customer' in current_user.user_type %}
+              <a
+                class="nav-item nav-link"
+                href="{{ url_for('create_project') }}"
+                >Create Project</a
+              >
+              <a class="nav-item nav-link" href="{{ url_for('CustomersBids') }}"
+                >View Bids</a
+              >
+              {% endif %}
+              <!-- Left Side Contractor Links -->
+              {% if 'Contractor' in current_user.user_type %}
+              <a
+                class="nav-item nav-link"
+                href="{{ url_for('contractors_projects') }}"
+                >View Projects</a
+              >
+              {% endif %}
             </ul>
           </div>
           <!-- Navbar Right Side -->
@@ -58,8 +69,18 @@
           >
             <ul class="navbar-nav mr-auto">
               {% if current_user.is_authenticated %}
+              <!-- Right Side Customer Links -->
+              {% if 'Customer' in current_user.user_type %}
+              <a class="nav-item nav-link" href="">My Projects</a>
+              {% endif %}
+              <!-- Right Side Contractor Links -->
+              {% if 'Contractor' in current_user.user_type %}
+              <a class="nav-item nav-link" href="">My Bids</a>
+              {% endif %}
               <li class="nav-item">
-                <a class="nav-link" href="#">My Account</a>
+                <a class="nav-link" href="{{ url_for('account') }}"
+                  >My Account</a
+                >
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="{{ url_for('logout') }}">Logout</a>
@@ -69,7 +90,9 @@
                 <a class="nav-link" href="{{ url_for('login') }}">Login</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="{{ url_for('register') }}">Register</a>
+                <a class="nav-link" href="{{ url_for('register') }}"
+                  >Register</a
+                >
               </li>
               {% endif %}
             </ul>

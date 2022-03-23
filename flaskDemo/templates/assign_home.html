@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+{% block content %}
+	<!-- changed outString to joined_m_n -->
+    {% for row in joined_m_n %}
+        <article class="media content-section">
+          <div class="media-body">
+            <div class="article-metadata">
+              <a class="mr-2" href="#">{{ row }}</a>		  
+              <small class="text-muted">{{ row['pno'] }}  {{ row['pname'] }}</small>
+			  <small class="text-muted">{{ row['essn'] }}  {{ row['fname'] }} {{ row['lname'] }}</small>			  
+            </div>
+			<!-- changed url_for to assign instead of dept -->
+			<!-- changed dnumber to pnumber & dnuame to pname for project. should I use composite key from works_on? -->
+			<h2><a class="article-title" href="{{ url_for('assign', pno=row.pno, essn=row.essn) }}">{{ row.pno }} {{ row.essn }}</a></h2>
+           
+          </div>
+        </article>
+     {% endfor %}
+{% endblock content %}

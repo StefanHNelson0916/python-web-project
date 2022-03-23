@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+{% block content %}
+    {% for row in joined_m_n %}
+        <article class="media content-section">
+          <div class="media-body">
+            <div class="article-metadata">
+              <a class="mr-2" href="#">Name: {{ row.contName }} ID: {{row.contractorID}}</a>		  
+            </div>
+            <h2><a class="article-title" href="">Skill Provided: {{ row.skillName }}</a></h2>
+           
+          </div>
+        </article>
+     {% endfor %}
+{% endblock content %}

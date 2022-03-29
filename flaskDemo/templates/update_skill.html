@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="content-section">
+    <form method="POST" action="">
+        {{ form.hidden_tag() }}
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4">{{ legend }}</legend>
+            <div class="form-group">
+                {{ form.skillID.label(class="form-control-label") }}
+                {% if form.skillID.errors %}
+                    {{ form.skillID(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.skillID.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.skillID(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>			
+            <div class="form-group">
+                {{ form.yearsExperience.label(class="form-control-label") }}
+                {% if form.yearsExperience.errors %}
+                    {{ form.yearsExperience(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.yearsExperience.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.yearsExperience(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+
+            <div class="form-group">
+                {{ form.certification.label(class="form-control-label") }}
+                {% if form.certification.errors %}
+                    {{ form.certification(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.certification.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.certification(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+        </fieldset>
+        <div class="form-group">
+            {{ form.submit(class="btn btn-outline-info") }}
+        </div>
+    </form>
+</div>
+{% endblock content %}

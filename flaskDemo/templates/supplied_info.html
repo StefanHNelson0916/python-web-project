@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+{% block content %}
+<br/>
+<h1>Info on resources supplied for Projects:</h1>
+<br/>
+{% for info in suppliedInfoResults %}
+    <article class="media content-section">
+        <div class="media-body">
+            <h2>Minimum Supply Quantity: {{ info.minSupplyQty }} </a></h2>
+            <h2>Maximum Supply Quantity: {{ info.maxSupplyQty }} </a></h2>
+            <h2>Average Supply Quantity: {{ info.avgSupplyQty }} </a></h2>
+            <h2>Minimum Supply Price: {{ info.minSupplyPrice }} </a></h2>
+            <h2>Maximum Supply Price: {{ info.maxSupplyPrice }} </a></h2>
+            <h2>Average Supply Price: {{ info.avgSupplyPrice }} </a></h2>
+        </div>         
+    </article>
+    {% endfor %}
+{% endblock content %}

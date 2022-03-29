@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+{% block content %}
+<br/>
+<h1>All Skills Offered:</h1>
+<br/>
+{% for skill in skillsResults %}
+    <article class="media content-section">
+        <div class="media-body">
+            <div class="article-metadata">
+              <a class="mr-2" href="#">Contractor: {{ skill.name }} Skill ID: {{ skill.skillID }}</a>	
+            </div>
+            <h2>Skill Description: {{ skill.description }} </a></h2>
+            <p>Hourly Rate: {{ skill.hourlyRate }}</p>
+            <p>Years of Experience: {{ skill.projStatus }}</p>
+            <p>Certification: {{ skill.certification }}</p>
+        </div>         
+    </article>
+    {% endfor %}
+{% endblock content %}

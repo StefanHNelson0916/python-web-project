@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+{% block content %}
+{% for contractor_skill in joined_m_n %}
+        <article class="media content-section">
+          <div class="media-body">
+            <div class="article-metadata">
+              <a class="mr-2" href="#">Skill ID: {{ contractor_skill.skillID }} Contractor ID: {{ contractor_skill.contractorID }}</a>	
+            </div>
+            <h2><a class="article-title" href="">{{ contractor_skill.skillName }} </a></h2>
+            <p>Description: {{ contractor_skill.description }}</p>
+            <p>Years of Experience: {{ contractor_skill.yearsExperience }}</p>
+            <p>Certification: {{ contractor_skill.certification }}</p>
+            <div>
+              <button type="button" class="btn btn-secondary btn-sm mt-1 mb-1" data-toggle="modal" data-target="#updateModal">Update</button>
+              <button type="button" class="btn btn-danger btn-sm m-1" data-toggle="modal" data-target="#deleteModal">Delete</button>
+            </div> 
+          </div>
+          
+        </article>
+<!-- Modal -->
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="deleteModalLabel">Delete Skill?</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <form action="{{ url_for('delete_skill', contractorID=contractor_skill.contractorID, skillID=contractor_skill.skillID) }}" method="POST">
+          <input class="btn btn-danger" type="submit" value="Delete">
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="updateModal" tabindex="-1" role="dialog" aria-labelledby="updateModelLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="updateModelLabel">Update Skill?</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <form action="{{ url_for('update_skill', contractorID=contractor_skill.contractorID, skillID=contractor_skill.skillID) }}" method="POST">
+          <input class="btn btn-danger" type="submit" value="Update">
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endfor %}
+{% endblock content %}
+			

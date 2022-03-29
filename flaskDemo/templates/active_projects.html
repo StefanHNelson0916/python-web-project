@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+{% block content %}
+<br/>
+<h1>My Active Projects</h1>
+<br/>
+{% for project in results %}
+<article class="media content-section">
+    <div class="media-body">
+        <div class="article-metadata">
+          <a class="mr-2" href="#">Project: {{ project.projectID }} Customer ID: {{ project.customerID }}</a>	
+        </div>
+        <h2>Description: {{ project.projDesc }} </a></h2>
+        <p>End Date: {{ project.endDate }}</p>
+    </div>         
+</article>
+{% endfor %}
+{% endblock content %}

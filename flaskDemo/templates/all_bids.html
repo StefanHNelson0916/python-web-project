@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+{% block content %}
+<br/>
+<h1>All Bids</h1>
+<br/>
+{% for project in bidResults %}
+    <article class="media content-section">
+        <div class="media-body">
+            <div class="article-metadata">
+              <a class="mr-2" href="#">Project ID: {{ project.projectID }} Customer ID: {{ project.customerID }} Contractor ID: {{ project.contractorID }}</a>	
+            </div>
+            <h2><a class="article-title" href="">{{ project.projDesc }} </a></h2>
+            <p>Start Date: {{ project.startDate }} End Date: {{ project.endDate }}</p>
+            <p>Status: {{ project.projStatus }}</p>
+        </div>         
+    </article>
+    {% endfor %}
+{% endblock content %}
